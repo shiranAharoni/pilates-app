@@ -1,0 +1,179 @@
+.exercise-list-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #4a3728;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.list-title {
+  font-family: 'Playfair Display', serif;
+  color: #fff;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  letter-spacing: 2px;
+}
+
+.exercises-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.exercise-card {
+  background: white;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  text-align: left; /* טקסט תיאור בדרך כלל נראה טוב יותר משמאל באנגלית */
+}
+
+.exercise-card h3 {
+  font-family: 'Playfair Display', serif;
+  color: #4a3728;
+  margin-bottom: 10px;
+}
+
+.no-exercises {
+  color: #fff;
+  font-size: 1.2rem;
+  grid-column: 1 / -1;
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* יחס 16:9 */
+  height: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-top: 15px;
+  background: #000;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.add-to-workout-btn {
+  background-color: #8b735b; /* צבע חום-אדמה עדין */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-top: 15px;
+  width: 100%;
+  transition: background 0.3s;
+}
+
+.add-to-workout-btn:hover {
+  background-color: #6d5a47;
+}
+
+.current-workout {
+  margin-top: 40px;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* מיכל הטופס */
+.add-exercise-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.9); /* לבן שקוף מעט שמשתלב עם הרקע */
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* עיצוב הכפתור החום */
+.save-btn {
+  background-color: #6d4c41; /* חום אדמה עמוק */
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-family: 'Playfair Display', serif; /* שימוש בפונט היוקרתי שלך */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+  margin-top: 20px;
+}
+
+.save-btn:hover {
+  background-color: #5d4037; /* גוון מעט כהה יותר במעבר עכבר */
+  transform: translateY(-2px);
+}
+
+/* עיצוב שדות הקלט שיהיו תואמים */
+.add-exercise-form input, 
+.add-exercise-form textarea, 
+.add-exercise-form select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #d7ccc8;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.exercise-card p {
+    white-space: pre-line; /* זה יגרום לכל \n להפוך לירידת שורה אמיתית */
+    line-height: 1.6;      /* בונוס: מרווח שורות נעים יותר לקריאה */
+}
+
+.exercise-card {
+  background: white;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  overflow: hidden; /* כדי שהפינות המעוגלות יישמרו */
+  transition: all 0.3s ease;
+}
+
+.card-header {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  background-color: #fdfaf8;
+}
+
+.card-header h3 {
+  margin: 0;
+  font-family: 'Assistant', sans-serif;
+  color: #4e342e;
+}
+
+.card-content {
+  padding: 20px;
+  border-top: 1px solid #eee;
+  animation: fadeIn 0.4s ease; /* אנימציה עדינה לפתיחה */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.add-to-plan-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #8b735b;
+  color: white;
+  border: none;
+  cursor: pointer;
+}

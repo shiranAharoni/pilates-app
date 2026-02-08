@@ -1,0 +1,38 @@
+/* הטופס כולו */
+.add-exercise-container {
+  font-family: 'Assistant', sans-serif; /* הפונט החדש והנקי */
+}
+
+/* כותרת הדף */
+.add-exercise-container h2 {
+  font-weight: 600;
+  color: #5d4037;
+  letter-spacing: 0.5px;
+  margin-bottom: 25px;
+}
+
+/* שדות הקלט (Input) */
+.add-exercise-form input, 
+.add-exercise-form textarea, 
+.add-exercise-form select {
+  font-family: 'Assistant', sans-serif;
+  background-color: #fdfaf8; /* צבע רקע עדין מאוד לשדות */
+  border: 1px solid #e0d5d0;
+  color: #444;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+/* שינוי צבע המסגרת כשלוחצים על השדה */
+.add-exercise-form input:focus, 
+.add-exercise-form textarea:focus {
+  border-color: #8b735b; /* החום של הכפתור שלך */
+}
+
+/* הכפתור החום */
+.save-btn {
+  font-family: 'Assistant', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase; /* הופך את האותיות לגדולות למראה מקצועי */
+  letter-spacing: 1px;
+}

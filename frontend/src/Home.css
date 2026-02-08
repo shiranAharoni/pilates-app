@@ -1,0 +1,97 @@
+.home-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.home-container p {
+  font-family: 'Inter', sans-serif; /* פונט נקי יותר לפסקאות */
+  font-size: 1.25rem; /* הגדלת הפונט */
+  color: #946a4a; 
+  margin-bottom: 60px; /* הגדלת המרחק מהכפתורים */
+  opacity: 0.9;
+  letter-spacing: 1px;
+}
+
+.home-container h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  color: #4a3728; /* החום הכהה מהתמונה */
+  letter-spacing: 3px;
+  margin-bottom: 40px;
+}
+
+.positions-grid {
+  display: grid;
+  /* יוצר 3 עמודות שוות שמתאימות את עצמן למסך */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.card-link {
+  text-decoration: none;
+}
+
+.position-card {
+  width: 100%;
+  background-color: #4a3728; /* צבע הכפתור מהתמונה */
+  color: #fff;
+  border: none;
+  padding: 45px 20px;
+  border-radius: 4px;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.position-card:hover {
+  background-color: #36281d;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+  .home-container h1 {
+    font-size: 2.2rem; /* הקטנת הכותרת הראשית */
+    margin-bottom: 20px;
+  }
+
+  .home-container p {
+    font-size: 1.1rem; /* הקטנת טקסט ההסבר */
+    margin-bottom: 40px;
+    padding: 0 10px; /* הוספת ריווח מהצדדים */
+  }
+
+  .positions-grid {
+    grid-template-columns: 1fr; /* כפתור אחד בכל שורה שייפרס לכל הרוחב */
+    gap: 15px; /* צמצום המרחק בין הכפתורים */
+    padding: 0 10px;
+  }
+
+  .position-card {
+    padding: 30px 15px; /* הקטנת ה-padding הפנימי של הכפתור */
+    font-size: 1rem; /* פונט מעט קטן יותר שיתאים לרוחב */
+  }
+}
+
+.add-main-btn {
+  background-color: #8b735b; /* חום עדין */
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  transition: 0.3s;
+}
+
+.add-main-btn:hover {
+  background-color: #6d5a47; /* חום קצת יותר כהה כשנוגעים בו */
+}

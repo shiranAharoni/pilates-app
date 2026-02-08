@@ -1,0 +1,39 @@
+/* src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* גוון חול/בז' מהתמונה שלך */
+  background-color: #c5a98e; 
+  /* פונט Serif יוקרתי לכותרות */
+  font-family: 'Playfair Display', serif;
+  color: #4a3728; /* חום כהה לטקסט */
+  line-height: 1.6;
+}
+
+/* הגדרה גלובלית לכל האפליקציה */
+body, button, input, textarea, select {
+  font-family: 'Assistant', sans-serif !important;
+}
+
+/* עיצוב הכותרת כדי שתראה יוקרתית אך נקייה */
+h2 {
+  font-weight: 600;
+  color: #4e342e; /* החום הכהה שמתכתב עם המותג שלך */
+  letter-spacing: 0.5px;
+}
+
+/* עיצוב שדות הטקסט שיהיו "רכים" יותר */
+input, textarea, select {
+  font-size: 1rem;
+  color: #444;
+  background-color: #fdfaf8; /* רקע שמנת עדין במקום לבן בוהק */
+  border: 1px solid #e0d5d0;
+  border-radius: 8px;
+  padding: 12px;
+}
