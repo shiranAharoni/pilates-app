@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import '../ExerciseList.css'; 
+import './ExerciseList.css'; 
+import { useWorkout } from '../../context/WorkoutContext';
 
 const getYouTubeEmbedUrl = (url) => {
   if (!url) return null;
@@ -19,18 +20,11 @@ const getYouTubeEmbedUrl = (url) => {
 function ExerciseList() {
   const { position } = useParams();
   const [exercises, setExercises] = useState([]);
-  const [workout, setWorkout] = useState([]); 
-  const [expandedId, setExpandedId] = useState(null); // המשתנה ששולט מה פתוח
+  const [expandedId, setExpandedId] = useState(null); 
 
-  const addToWorkout = (exercise) => {
-    if (!workout.find(item => item.id === exercise.id)) {
-      setWorkout([...workout, exercise]);
-    } else {
-      alert("This exercise is already in your workout.");
-    }
-  };
+  const navigate = useNavigate();
 
-  // פונקציית הפתיחה והסגירה
+  const { workout, addToWorkout } = useWorkout();
   const toggleExpand = (id) => {
     setExpandedId(expandedId === id ? null : id);
   };
@@ -67,13 +61,11 @@ function ExerciseList() {
           exercises.map((ex) => (
             <div key={ex.id} className={`exercise-card ${expandedId === ex.id ? 'active' : ''}`}>
               
-              {/* חלק 1: ראש הכרטיסייה - תמיד גלוי */}
               <div className="card-header" onClick={() => toggleExpand(ex.id)}>
                 <h3>{ex.title}</h3>
                 <span className="arrow-icon">{expandedId === ex.id ? '▲' : '▼'}</span>
               </div>
 
-              {/* חלק 2: תוכן הכרטיסייה - מותנה בזה שה-ID פתוח */}
               {expandedId === ex.id && (
                 <div className="card-content">
                   <p className="description">{ex.description}</p>
@@ -93,7 +85,7 @@ function ExerciseList() {
                   <button 
                     className="add-to-workout-btn"
                     onClick={(e) => {
-                      e.stopPropagation(); // מונע מהקליק לסגור את הכרטיסייה
+                      e.stopPropagation(); 
                       addToWorkout(ex);
                     }}>
                     + Add to Workout
@@ -111,11 +103,21 @@ function ExerciseList() {
         <div className="current-workout">
           <h2>My Workout ({workout.length})</h2>
           <div className="workout-tags">
-            {workout.map((item, index) => (
-              <span key={index} className="workout-tag">{item.title}</span>
+            {workout.map((item) => (
+              <div key={item.id} className="workout-tag">
+                <span>{item.title}</span>
+                <button 
+                  className="remove-tag-btn" 
+                  onClick={() => removeFromWorkout(item.id)}
+                >
+                  ×
+                </button>
+              </div>
             ))}
           </div>
-          <button className="start-session-btn">Start Session</button>
+          <button className="start-session-btn"
+          onClick={() => navigate('/session')}>
+            Start Session</button>
         </div>
       )}
     </div>

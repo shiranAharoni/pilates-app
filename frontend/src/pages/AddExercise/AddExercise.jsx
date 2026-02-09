@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
-import '../AddExercise.css';
+import "./AddExercise.css";
 
 function AddExercise() {
   // ניהול כל שדות הטופס באובייקט אחד

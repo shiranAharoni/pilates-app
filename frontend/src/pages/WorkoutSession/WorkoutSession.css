@@ -1,0 +1,95 @@
+/* מיכל ראשי */
+.session-container {
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background-color: #fdfaf8; /* רקע שמנת עדין */
+  font-family: 'Assistant', sans-serif;
+}
+
+/* כותרת הדף */
+.session-title {
+  text-align: center;
+  color: #4e342e;
+  font-weight: 600;
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* רשימת התרגילים */
+.session-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* פריט תרגיל בודד */
+.session-item {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* מספר התרגיל בעיגול */
+.exercise-number {
+  background-color: #8b735b;
+  color: white;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  flex-shrink: 0;
+  margin-top: 10px;
+}
+
+/* כרטיסיית התרגיל */
+.session-card {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  flex-grow: 1;
+  border-right: 5px solid #8b735b; /* פס דקורטיבי בצד */
+}
+
+.session-card h2 {
+  margin-top: 0;
+  color: #5d4037;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.session-card p {
+  line-height: 1.6;
+  color: #444;
+  white-space: pre-line; /* שומר על ירידות השורה מה-Database */
+}
+
+/* כפתור חזרה/סיום */
+.back-link {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #8b735b;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.2s;
+}
+
+.back-link:hover {
+  transform: translateX(-5px);
+}
+
+/* הודעה כשאין תרגילים */
+.no-exercises-msg {
+  text-align: center;
+  padding: 50px;
+  background: white;
+  border-radius: 15px;
+  color: #888;
+}
