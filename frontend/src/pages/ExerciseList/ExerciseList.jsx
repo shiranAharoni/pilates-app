@@ -24,7 +24,7 @@ function ExerciseList() {
 
   const navigate = useNavigate();
 
-  const { workout, addToWorkout } = useWorkout();
+  const { workout, addToWorkout, removeFromWorkout } = useWorkout();
   const toggleExpand = (id) => {
     setExpandedId(expandedId === id ? null : id);
   };
