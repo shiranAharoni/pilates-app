@@ -7,7 +7,7 @@ import WorkoutSession from './pages/WorkoutSession/WorkoutSession';
 
 function App() {
   return (
-    <WorkoutProvider> {/* עוטף את הכל כדי שהמידע יישמר במעבר דפים */}
+    <WorkoutProvider> 
       <Router>
         <div className="app-container">
           <Routes>

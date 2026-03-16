@@ -4,17 +4,15 @@ import { useNavigate, Link } from 'react-router-dom';
 import "./AddExercise.css";
 
 function AddExercise() {
-  // ניהול כל שדות הטופס באובייקט אחד
   const [formData, setFormData] = useState({
     title: '',
     description: '',
-    position: 'supine', // ברירת מחדל
+    position: 'supine', 
     video_url: ''
   });
 
   const navigate = useNavigate();
 
-  // פונקציה שמתעדכנת בכל שינוי בתיבות הטקסט
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -26,10 +24,9 @@ function AddExercise() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // שליחת הנתונים לכתובת ה-POST שהכנו בשרת
       await axios.post('http://localhost:5000/exercises', formData);
       alert('Exercise added successfully!');
-      navigate('/'); // מחזיר אותך לדף הבית אחרי ההוספה
+      navigate('/'); 
     } catch (err) {
       console.error(err);
       alert('Error adding exercise. Make sure the server is running.');
